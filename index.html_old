@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="angTask">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.9.0.js"></script>
+    <script src="app.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+<div class="row">
+<div class="col-md-6">
+<div ng-controller="ProgressCtrl">
+    <progressbar max="100" value="(dynamic * 100 / max)"><span style="color:black; white-space:nowrap;">{{dynamic}}%</span></progressbar>
+</div>
+
+
+
+<div ng-controller="ProgressCtrl2">
+    <progressbar max="400" value="(dynamic * 400 / max)"><span style="color:black; white-space:nowrap;">{{dynamic}}%</span></progressbar>
+</div>
+
+
+
+<div ng-controller="ProgressCtrl3">
+    <progressbar max="200" value="(dynamic * 200 / max)"><span style="color:black; white-space:nowrap;">{{dynamic}}%</span></progressbar>
+</div>
+
+</div>
+</div>
+
+
+
+<div class="row">
+        <div class="col-md-3">
+           <div  ng-controller="listCtrl">
+<!--               <select ng-model="progress.barId" ng-options="progressbar.id as progressbar.name for progressbar in progressbar.barList"></select>  
+ -->              <select ng-model="progress.barId" ng-options="list.id as list.name for list in progress.progresslist"></select>
+
+           </div>
+      </div>
+        <div class="col-md-6 col-md-offset-3">
+            <button type="button" class="btn btn-sm btn-primary" ng-click="subtracttwentyfive()">-25</button>
+            <button type="button" class="btn btn-sm btn-primary" ng-click="subtractten()">-10</button>
+            <button type="button" class="btn btn-sm btn-primary" ng-click="addtwentyfive()">+25</button>
+            <button type="button" class="btn btn-sm btn-primary" ng-click="addten()">+10</button>
+
+        </div>
+       
+      </div>
+  </body>
+</html>
